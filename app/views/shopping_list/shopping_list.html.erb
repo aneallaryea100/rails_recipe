@@ -1,0 +1,45 @@
+<h1>Shopping List 🛒</h1>
+
+<div class="container mt-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% value = 0%>
+      <% items = 0%>
+      <%if @user.recipes.empty? %>
+      <% @recipes.each do |recipe| %>
+      <% value += recipe.food.price %>
+      <% items +=1 %>
+      <tr>
+        <td><%= recipe.food.name %></td>
+        <td><%= recipe.food.quantity %></td>
+        <td><%= recipe.food.price %></td>
+      </tr>
+      <%end%>
+      <%else%>
+      <% @user.recipes.each do |user_recipe| %>
+      <% @recipes.each do |recipe| %>
+      <%if user_recipe.id != recipe.recipe_id%>
+      <% value += recipe.food.price %>
+      <% items +=1 %>
+      <tr>
+        <td><%= recipe.food.name %></td>
+        <td><%= recipe.food.quantity %></td>
+        <td><%= recipe.food.price %></td>
+      </tr>
+      <%end%>
+      <%end%>
+      <%end%>
+      <%end%>
+      <div class="button-cont">
+        <h4>Amount of Food items to buy : <%=items%></h4>
+        <h4>Total Value of Food Needed : <%=value%> $</h4>
+      </div>
+    </tbody>
+  </table>

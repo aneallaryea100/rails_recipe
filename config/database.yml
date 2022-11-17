@@ -25,7 +25,7 @@ development:
   <<: *default
   database: rails_recipe_development
   username: postgres
-  password: chuma
+  password: yesindeed
   host: 127.0.0.1
   port: 5432
 
@@ -64,7 +64,7 @@ test:
   <<: *default
   database: rails_recipe_test
   username: postgres
-  password: chuma
+  password: yesindeed
   host: 127.0.0.1
   port: 5432
 
