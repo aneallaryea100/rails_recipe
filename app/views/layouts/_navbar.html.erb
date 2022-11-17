@@ -6,7 +6,7 @@
         <%if user_signed_in?%>
             <li><%= link_to "Home 🏠", root_path%></li>
             <li><%= link_to "Food 🍽️", foods_path%></li>
-            <li><%= link_to "Recipe", recipes_path%></li>
+            <li><%= link_to "Recipe 🍜", recipes_path%></li>
             <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "sign_out" %></li>
             <%else%>
             <li><%= link_to "Sign In",  new_user_session_path %></li>

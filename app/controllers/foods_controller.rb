@@ -3,15 +3,17 @@ class FoodsController < ApplicationController
 
   # GET /foods or /foods.json
   def index
-    @foods = Food.all
+    @foods = current_user.foods.order(:id)
   end
 
   # GET /foods/1 or /foods/1.json
-  def show; end
+  def show
+    @food = current_user.foods.find(params[:id])
+   end
 
   # GET /foods/new
   def new
-    @food = Food.new
+    @food = current_user.foods.build
   end
 
   # GET /foods/1/edit
@@ -19,7 +21,7 @@ class FoodsController < ApplicationController
 
   # POST /foods or /foods.json
   def create
-    @food = Food.new(food_params)
+    @food = current_user.foods.build(food_params)
 
     respond_to do |format|
       if @food.save
@@ -47,7 +49,8 @@ class FoodsController < ApplicationController
 
   # DELETE /foods/1 or /foods/1.json
   def destroy
-    @food.destroy
+    @food = current_user.foods.find(params[:id]).destroy
+    
 
     respond_to do |format|
       format.html { redirect_to foods_url, notice: 'Food was successfully destroyed.' }
@@ -64,6 +67,6 @@ class FoodsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def food_params
-    params.require(:food).permit(:name, :measurement_unit, :price, :quantity, :user_id)
+    params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
   end
 end
