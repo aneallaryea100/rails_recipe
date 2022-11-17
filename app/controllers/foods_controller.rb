@@ -9,7 +9,7 @@ class FoodsController < ApplicationController
   # GET /foods/1 or /foods/1.json
   def show
     @food = current_user.foods.find(params[:id])
-   end
+  end
 
   # GET /foods/new
   def new
@@ -50,7 +50,6 @@ class FoodsController < ApplicationController
   # DELETE /foods/1 or /foods/1.json
   def destroy
     @food = current_user.foods.find(params[:id]).destroy
-    
 
     respond_to do |format|
       format.html { redirect_to foods_url, notice: 'Food was successfully destroyed.' }
