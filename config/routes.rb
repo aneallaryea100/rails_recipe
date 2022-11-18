@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get '/public_recipes', to: 'recipes#public'
+  get '/shopping_list', to: 'shopping_list#shopping_list'
 
   # Defines the root path route ("/")
    root "welcome#index"
