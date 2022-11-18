@@ -25,10 +25,9 @@ development:
   <<: *default
   database: rails_recipe_development
   username: postgres
-  password: chuma
+  password: yesindeed
   host: 127.0.0.1
   port: 5432
-
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -64,7 +63,7 @@ test:
   <<: *default
   database: rails_recipe_test
   username: postgres
-  password: chuma
+  password: yesindeed
   host: 127.0.0.1
   port: 5432
 

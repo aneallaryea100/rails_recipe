@@ -11,9 +11,9 @@ class RecipefoodsController < ApplicationController
 
   # GET /recipefoods/new
   def new
-    @recipe = current_user.recipes.find(params[:format]) 
+    # @recipe = current_user.recipes.find(params[:format]) 
     @recipefood = Recipefood.new
-    puts @recipefood
+    # puts @recipefood
 
   end
 
