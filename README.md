@@ -49,15 +49,7 @@ Cloning a repository
 - Open `http://localhost:3000/` on your browser.
 
 
-### Rspec Tests
 
-To run the tests:
-
-- Open your terminal;
-
-- Go to application folder;
-
-- run `rspec`
 
 ## Live demo
 [Recipe App](https://glacial-basin-74137.herokuapp.com/)
