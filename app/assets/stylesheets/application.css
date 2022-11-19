@@ -14,7 +14,7 @@
  *= require_self
  */
 
-a {
+a, button {
   text-decoration: none;
   background-color: honeydew;
   padding: 0.2rem 0.5rem;

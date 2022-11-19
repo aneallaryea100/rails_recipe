@@ -11,12 +11,21 @@
     </div>
   <% end %>
   
-  <div>
-    <%= form.label :quantity, style: "display: block" %>
-    <%= form.number_field :quantity %>
+  <div class="container">
+  <div class="form-group">
+    <%= form.label :quantity %><br />
+    <%= form.text_field :quantity, class:"form-control", placeholder: "Quantity" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+<%= form.label :Recipe, class: "form-input-label" %>
+   <%= form.select :recipe_id, options_for_select(@recipe_items), {}, { :class => 'form-select mb-2' } %>
+
+
+  <%= form.label :Food, class: "form-input-label" %>
+   <%= form.select :food_id, options_for_select(@food_items), {}, { :class => 'form-select mb-2' } %>
+
+  <div class="submit-button">
+    <%= form.submit class: "btn btn-outline-dark btn-lg" %>
   </div>
+</div>
 <% end %>
