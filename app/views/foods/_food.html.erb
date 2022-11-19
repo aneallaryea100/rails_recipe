@@ -1,0 +1,24 @@
+
+  <table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Measurement</th>
+      <th scope="col">Unit price</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+<% @foods.includes(:user).each do |food| %>
+  <tbody>
+    <tr>
+      <td><%= food.name %></td>
+      <td><%= food.measurement_unit %></td>
+      <td><%= food.price %></td>
+      <td><%= button_to "Delete", food_path(food), method: :delete %></td>
+    </tr>
+  </tbody>
+<% end %>
+</table>
+
+
+

@@ -1,0 +1,23 @@
+
+<div class="container mt-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Quantity</th>
+        <th scope="col">food_id</th>
+        <th scope="col">recipe_id</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipefoods.each do |recipefood| %>
+      <tr>
+        <td><%= recipefood.quantity %></td>
+        <td><%= recipefood.food.name %></td>
+        <td><%= recipefood.recipe.name %></td>
+        <td><%= link_to 'Modify', class: "btn btn-outline-danger" %><span><%= link_to 'Remove', class: "btn btn-outline-danger" %></span></td>
+      </tr>
+    </tbody>
+    <%end%>
+  </table>
+</div>

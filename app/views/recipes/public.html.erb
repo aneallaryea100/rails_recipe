@@ -1,0 +1,38 @@
+<h1 class="text-center mt-4">Public Recipes</h1>
+<div class="container">
+  <% @public_recipies.includes(:user, :recipefoods).each do |recipe| %>
+  <%if can? :read, recipe%>
+  <div class="row justify-content-md-center">
+    <div class="col-8 mt-4">
+      <div class="card text-center shadow-lg mb-5 bg-white rounded">
+        <div class="card-header fst-italic">
+          <h3 class="card-title text-success">Made By: <%= @user.name %></h3>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to recipe.name, recipe_path(recipe), class: "underline" %></h5>
+          <div class="card-text"><%= simple_format(truncate(recipe.description, length:100)) %></div>
+          <div class="card-text">
+            <p>Total food items: <%=recipe.recipefoods.count%></p>
+            <p>Total price:
+              <%a = 0%>
+              <% recipe.recipefoods.each do |recipefood| %>
+              <% a += recipefood.food.price.to_int %>
+              <%end%>
+              <%= a%> $
+            </p>
+          </div>
+
+          <%= link_to 'View', recipe_path(recipe), class: "btn btn-outline-success" %>
+          <%if can? :destroy, recipe%>
+          <%= link_to 'Remove', recipe_path(recipe), data: { turbo_method: 'delete', turbo_confirm: "Are you sure to delete" }, class: "btn btn-outline-danger" %>
+          <%end%>
+        </div>
+        <div class="card-footer text-muted">
+          <p> created <%= time_ago_in_words(recipe.created_at) %> ago, updated <%= time_ago_in_words(recipe.updated_at) %> ago </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%end%>
+  <%end%>
+</div>

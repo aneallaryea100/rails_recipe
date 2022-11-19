@@ -1,0 +1,8 @@
+<div class="card m-auto" style="width: 50rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= recipe.name %></h5>
+    <p class="card-text"><%= recipe.description %></p>
+    <p><%= button_to "Delete", recipe_path(recipe), class: 'btn', method: :delete %></p>
+    <a href="#" class="btn "><%= link_to "Show this recipe", recipe %></a>
+  </div>
+</div>

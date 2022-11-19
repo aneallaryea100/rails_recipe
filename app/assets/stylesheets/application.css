@@ -1,0 +1,60 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+a,
+button {
+  text-decoration: none;
+  background-color: honeydew;
+  padding: 0.2rem 0.5rem;
+  color: #000;
+  border-radius: 0.2rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+.nav_list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_list li {
+  margin: 0 1rem;
+}
+
+.container_navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: burlywood;
+  align-items: center;
+}
+
+.title {
+  color: brown;
+  font-size: 2rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 700;
+  margin: 0 1rem;
+}
+
+.sign_out {
+  background-color: red;
+  padding: 0.5rem;
+  border: none;
+}
